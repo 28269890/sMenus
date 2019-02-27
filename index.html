@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>sMenus - Demo</title>
+<link rel="stylesheet" type="text/css" href="jquery.sMenus.css">
+<style type="text/css">
+hr{
+	margin: 100px 0 0 0;
+    border: #fb0000 solid; 
+    border-width: 1px 0 0 0;
+}
+
+
+
+
+
+</style>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+<script src="https://cdn.bootcss.com/highlight.js/9.14.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+<script src="jquery.sMenus.js"></script>
+</head>
+<body>
+<h1>CSS：</h1>
+
+<pre>
+	<code class="css">
+.sMenus{
+	position: absolute;
+    background-color: #efefef;
+	box-shadow: 1px 1px 3px 0px #bbb;
+	user-select: none;
+}
+.sMenus span{
+    cursor: pointer;
+	display:block;
+	width:100%;
+}
+
+.sMenus .hr{
+	border-top: 1px solid #ccc;
+    border-bottom: 1px solid #fff;
+}
+.sMenus .menu{
+	color:#333;
+    padding: 2px 37px 2px 30px;
+	min-width:50px;
+	position: relative;
+}
+.sMenus .menu:hover{
+	background-color: #999;
+    color: #eee;
+}
+
+.sMenus .main{
+    background-image: url('data:image/svg+xml;utf8,< svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" >< path fill="#333" d="M 250 300 l 600 200 l -600 200 Z"/>< /svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 2px) center;
+    background-size: 14px;
+}
+.sMenus .main:hover{
+    background-image: url('data:image/svg+xml;utf8,< svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" >< path fill="#eee" d="M 250 300 l 600 200 l -600 200 Z"/>< /svg>');
+}
+
+.sMenus .main>.sMenus{
+	display:none;
+	left: 100%;
+    top: 0px;
+}
+
+.sMenus .main:hover>.sMenus{
+	display:block;
+}
+	</code>
+</pre>	
+<hr>
+<h1>插件简单说明</h1>
+
+
+
+
+
+
+
+<hr>
+<h1>DEMO1 : 数据在js中</h1>
+JS Code:
+<pre>
+	<code class="javascript">
+$("#Demo1").sMenus({
+	data:[
+		{
+			text:"menu1",
+			fn:function(){
+				console.log(1)
+			},
+			data:[
+				{
+					text:"menu3",
+					fn:function(){
+						console.log(3)
+					},
+					data:[
+						{
+							text:"menu4",
+							fn:function(){
+								console.log(4)
+							}
+						},
+					]
+				},
+			]
+		},{
+			text:"",
+		},{
+			text:"menu2",
+			fn:function(){
+				console.log(2)
+			},
+			data:[
+				{
+					text:"menu5",
+					fn:function(){
+						console.log(5)
+					}
+				},
+			]
+
+		},{
+			text:"menu6",
+			fn:function(){
+				console.log(6)
+			}
+		},
+	]
+})
+	</code>
+</pre>	
+HTML Code:
+<pre>
+	<code class="html">
+这是一个提示：< span title="提示内容" id="Demo1">请将鼠标移动到这里< /span>
+	</code>
+</pre>	
+
+这是一个菜单：<span id="Demo1" >请右键点我</span>
+
+
+
+
+
+
+<hr>
+<h1>DEMO2 : 数据在属性中</h1>
+JS Code:
+<pre>
+	<code class="javascript">
+$("#Demo2").sMenus()
+	</code>
+</pre>	
+HTML Code:
+<pre>
+	<code class="html">
+这是一个菜单：< span id="Demo2" sMenu='[
+		{
+			text:"menu1",
+			fn:function(){
+				console.log(1)
+			},
+			close:false,
+			data:[
+				{
+					text:"menu3",
+					fn:function(){
+						console.log(3)
+					},
+					data:[
+						{
+							text:"menu4",
+							fn:function(){
+								console.log(4)
+							}
+						},
+					]
+				},
+			]
+		},{
+			text:"",
+		},{
+			text:"menu2",
+			fn:function(){
+				console.log(2)
+			},
+			data:[
+				{
+					text:"menu5",
+					fn:function(){
+						console.log(5)
+					}
+				},
+			]
+
+		},{
+			text:"menu6",
+			fn:function(){
+				console.log(6)
+			}
+		},
+	]' >请右键点我< /span>
+
+	</code>
+</pre>	
+
+这是一个菜单：<span id="Demo2" sMenu='[
+		{
+			text:"menu1",
+			fn:function(){
+				console.log(1)
+			},
+			close:false,
+			data:[
+				{
+					text:"menu3",
+					fn:function(){
+						console.log(3)
+					},
+					data:[
+						{
+							text:"menu4",
+							fn:function(){
+								console.log(4)
+							}
+						},
+					]
+				},
+			]
+		},{
+			text:"",
+		},{
+			text:"menu2",
+			fn:function(){
+				console.log(2)
+			},
+			data:[
+				{
+					text:"menu5",
+					fn:function(){
+						console.log(5)
+					}
+				},
+			]
+
+		},{
+			text:"menu6",
+			fn:function(){
+				console.log(6)
+			}
+		},
+	]' >请右键点我</span>
+
+
+<hr>
+<h1>data说明</h1>
+JS Code:
+<pre>
+	<code class="javascript">
+	data:[//数组，数组元素为单个菜单项目信息，JSON格式。
+		{
+			text:"menu6",//菜单名称，如为false则其他项目失效，并视为分割线
+			fn:function(){//点击事件
+				console.log(6)
+			},
+			close:true,//点击本项目后是否关闭菜单，可省略，由主配置项管理
+			data:[],//子菜单项目，数组元素于本例相同。
+			css:"oc",//可为本菜单单独指定css样式，主要用于配置菜单图标，需自定义，可省略。
+
+		}
+	]
+	</code>
+</pre>
+
+
+
+
+
+<hr>
+<h1>默认值</h1>
+JS Code:
+<pre>
+	<code class="javascript">
+{
+	data:[],
+	phy:1, //透明度 0-1
+	inTime:200,//淡入时间
+	outTime:200,//淡出时间
+	css:"sMenus",//指定css样式
+	close:true,//点击菜单项目后是否关闭菜单
+}
+	</code>
+</pre>
+<script type="text/javascript">
+	$("#Demo1").sMenus({
+		data:[
+			{
+				text:"menu1",
+				fn:function(){
+					console.log(1)
+				},
+				data:[
+					{
+						text:"menu3",
+						fn:function(){
+							console.log(3)
+						},				data:[
+					{
+						text:"menu4",
+						fn:function(){
+							console.log(4)
+						}
+					},
+				]
+
+					},
+				]
+			},{
+				text:"",
+			},{
+				text:"menu2",
+				fn:function(){
+					console.log(2)
+				},				data:[
+					{
+						text:"menu5",
+						fn:function(){
+							console.log(5)
+						}
+					},
+				]
+
+			},{
+				text:"menu6",
+				fn:function(){
+					console.log(6)
+				}
+			},
+		]
+	})
+	$("#Demo2").sMenus()
+
+
+</script>
+
+</body>
+</html>

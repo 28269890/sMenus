@@ -1,0 +1,49 @@
+.sMenus{
+	position: absolute;
+    background-color: #efefef;
+	box-shadow: 1px 1px 3px 0px #bbb;
+	font-size: 14px;
+	user-select: none;
+}
+.sMenus span{
+    cursor: pointer;
+	display:block;
+	width:100%;
+}
+
+.sMenus .hr{
+	border-top: 1px solid #ccc;
+    border-bottom: 1px solid #fff;
+}
+.sMenus .menu{
+	color:#333;
+    padding: 2px 37px 2px 30px;
+	min-width:50px;
+	position: relative;
+}
+.sMenus .menu:hover{
+	background-color: #999;
+    color: #eee;
+}
+
+.sMenus .main{
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" ><path fill="#333" d="M 250 300 l 600 200 l -600 200 Z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 2px) center;
+    background-size: 14px;
+}
+.sMenus .main:hover{
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" ><path fill="#eee" d="M 250 300 l 600 200 l -600 200 Z"/></svg>');
+}
+
+.sMenus .main>.sMenus{
+	display:none;
+	left: 100%;
+    top: 0px;
+}
+
+.sMenus .main:hover>.sMenus{
+	display:block;
+}
+
+

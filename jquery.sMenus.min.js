@@ -1,5 +1,5 @@
 /*
-	jQuery 鼠标提示插件 v2.0
+	jQuery 右键自定义菜单插件 ver 0.1
 
 	https://github.com/28269890/sMenus
 
